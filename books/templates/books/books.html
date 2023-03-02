@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1 class="text-center">{{ context.message }}</h1>
+    <form method="GET">
+        <table>
+            <tr>
+                <td><input class="form-control" type="text" name="param1"></td>
+            </tr>
+            <tr>
+                <td><input class="form-control" type="text" name="param2"></td>
+            </tr>
+            <tr>
+                <td><input class="form-control" type="submit" value="send"></td>
+            </tr>
+        </table>
+    </form>
+{% endblock %}

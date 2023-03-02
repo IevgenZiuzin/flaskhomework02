@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block header %}
+    {{ super() }}
+    {% set subheader = context.subheader %}
+    {% include 'snippets/subheader.html' %}
+{% endblock %}
+{% block content %}
+    <h1 class="text-center">{{ context.message }}</h1>
+{% endblock %}
