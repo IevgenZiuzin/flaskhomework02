@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <form method="post">
+        <h1 class="text-center p-5 {{ context.color }}">{{ context.day }}</h1>
+        <input type="hidden" name="day" value="{{ context.day }}">
+        <input class="btn btn-primary d-block mx-auto" type="submit" value="try next">
+
+    </form>
+{% endblock %}

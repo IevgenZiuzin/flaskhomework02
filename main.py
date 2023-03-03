@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 
 from song.song import song
 from cars.cars import cars
@@ -22,6 +22,21 @@ def index():
         'page_title': 'Home'
     }
     return render_template('index.html', context=context)
+
+@app.errorhandler(404)
+def page_not_found(e):
+    context = {
+        'page_title': '404',
+    }
+    return render_template('404.html', context=context), 404
+
+
+@app.errorhandler(500)
+def internal_server_error(e):
+    context = {
+        'page_title': '500',
+    }
+    return render_template('500.html', context=context), 500
 
 
 if __name__ == '__main__':
